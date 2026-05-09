@@ -29,7 +29,11 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-
+               for (int i = 0; i < 60; i++) {
+                  echo "${i + 1}"
+                  sleep 1
+                 }
+                
                 // Run Maven tests
                 sh 'mvn test'
             }
